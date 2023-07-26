@@ -1,8 +1,10 @@
+import SiteHeader from '@/components/siteHeader'
 import './globals.css'
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Inter_Tight } from 'next/font/google'
+import { TailwindIndicator } from '@/components/tailwindIndicator'
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter_Tight({ subsets: ['latin'], variable: '--font-sans' })
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -16,7 +18,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className='font-sans'>
+        <SiteHeader />        
+        {children}
+        <TailwindIndicator />
+      </body>
     </html>
   )
 }
