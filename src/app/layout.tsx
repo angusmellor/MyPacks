@@ -1,4 +1,3 @@
-import SiteHeader from '@/components/siteHeader'
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter_Tight } from 'next/font/google'
@@ -18,8 +17,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className='font-sans'>
-        <SiteHeader />        
+      <body className='font-sans'>      
         {children}
         <TailwindIndicator />
       </body>
