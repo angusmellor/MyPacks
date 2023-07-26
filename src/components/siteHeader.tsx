@@ -11,10 +11,8 @@ export default function SiteHeader() {
         >
           <h1>My Packs</h1>
         </Link>
-
       </nav>
       <Separator/>
     </header>
-
   )
 }
