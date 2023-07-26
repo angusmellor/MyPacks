@@ -1,8 +1,10 @@
+import SiteHeader from '@/components/siteHeader'
 import Image from 'next/image'
 
 export default function Home() {
   return (
     <>
+      <SiteHeader /> 
       <main>
         <h1 className="text-3xl font-extrabold leading-tight tracking-tighter md:text-4xl">
           Your new backpack building <br/> and gear inventory tool
