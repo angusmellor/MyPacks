@@ -5,6 +5,7 @@ import {
   X,
   Warehouse,
   ChevronLeft,
+  ChevronRight,
 } from "lucide-react"
 
 export const Icons = {
@@ -13,6 +14,7 @@ export const Icons = {
   X: X,
   store: Warehouse,
   chevronLeft: ChevronLeft,
+  chevronRight: ChevronRight,
   google: (props: LucideProps) => (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 186.69 190.5" {...props}>
       <g transform="translate(1184.583 765.171)">
