@@ -16,6 +16,13 @@ module.exports = {
     'fill-custPurp',
     'fill-custBrown',
     'fill-custOrng',
+    'bg-custBlue',
+    'bg-custBlue2',
+    'bg-custGreen',
+    'bg-custPink',
+    'bg-custPurp',
+    'bg-custBrown',
+    'bg-custOrng',
   ],
   theme: {
     container: {
@@ -90,6 +97,9 @@ module.exports = {
       fontFamily: {
         sans: ['var(--font-lora)'],
       },
+      boxShadow: {
+        DEFAULT: "3px 3px black",
+      }
     },
   },
   plugins: [require("tailwindcss-animate")],
