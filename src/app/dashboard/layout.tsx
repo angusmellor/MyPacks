@@ -6,13 +6,11 @@ export default function DashboardLayout({
     children: React.ReactNode
   }) {
   return (
-    <div className="flex min-h-screen space-y-6" >
-      <aside>
-        <Dashboardnav />
-      </aside>
-      <section className="w-full">
+    <div className="flex h-full" >
+      <Dashboardnav />
+      <main className=" flex-1 flex h-full bg-neutral-200-">
         {children}
-      </section>
+      </main>
     </div>
   )
 }

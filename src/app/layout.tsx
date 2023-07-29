@@ -1,9 +1,8 @@
 import './globals.css'
 import type { Metadata } from 'next'
-import { Inter_Tight } from 'next/font/google'
 import { TailwindIndicator } from '@/components/tailwindIndicator'
-
-const inter = Inter_Tight({ subsets: ['latin'], variable: '--font-sans' })
+import SiteHeader from '@/components/siteHeader'
+import { lora } from '@/lib/fonts'
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -16,8 +15,9 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className='font-sans'>      
+    <html lang="en" className='h-full'>
+      <body className={`${lora.variable} font-sans relative flex h-full flex-col`}>
+        <SiteHeader />      
         {children}
         <TailwindIndicator />
       </body>

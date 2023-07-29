@@ -4,9 +4,8 @@ import Image from 'next/image'
 export default function HomePage() {
   return (
     <>
-      <SiteHeader /> 
       <main>
-        <h1 className="text-3xl font-extrabold leading-tight tracking-tighter md:text-4xl">
+        <h1 className="text-3xl leading-tight tracking-tighter md:text-4xl">
           Your new backpack building <br/> and gear inventory tool
         </h1>
         <p className="max-w-[700px] text-lg">

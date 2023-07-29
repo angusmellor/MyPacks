@@ -1,6 +1,6 @@
-import { Inter as FontSans } from "next/font/google"
+import { Lora } from "next/font/google"
 
-export const fontSans = FontSans({
+export const lora = Lora({
   subsets: ["latin"],
-  variable: "--font-sans",
+  variable: "--font-lora",
 })

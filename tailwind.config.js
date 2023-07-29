@@ -2,11 +2,21 @@
 module.exports = {
   darkMode: ["class"],
   content: [
+    './lib/**/*.{ts,tsx}', // Add this line
     './pages/**/*.{ts,tsx}',
     './components/**/*.{ts,tsx}',
     './app/**/*.{ts,tsx}',
     './src/**/*.{ts,tsx}',
 	],
+  safelist: [
+    'fill-custBlue',
+    'fill-custBlue2',
+    'fill-custGreen',
+    'fill-custPink',
+    'fill-custPurp',
+    'fill-custBrown',
+    'fill-custOrng',
+  ],
   theme: {
     container: {
       center: true,
@@ -17,6 +27,13 @@ module.exports = {
     },
     extend: {
       colors: {
+        custBlue: 'hsl(var(--custBlue))',
+        custBlue2: 'hsl(221, 34%, 74%)',
+        custGreen: 'hsl(119, 34%, 74%)',
+        custPink: 'hsl(333, 47%, 84%)',
+        custPurp: 'hsl(273, 34%, 74%)',
+        custBrown: 'hsl(20, 28%, 75%)',
+        custOrng: 'hsl(21, 100%, 81%)',
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -69,6 +86,9 @@ module.exports = {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+      },
+      fontFamily: {
+        sans: ['var(--font-lora)'],
       },
     },
   },
