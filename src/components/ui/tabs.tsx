@@ -12,7 +12,7 @@ const Tabs = React.forwardRef<
   <TabsPrimitive.Root
     ref={ref}
     className={cn(
-      "flex min-w-fit flex-col items-center justify-center border-separate [filter:drop-shadow(3px_3px_black)] ",
+      "flex min-w-fit flex-col items-center justify-center  ",
       className
     )}
     {...props}
