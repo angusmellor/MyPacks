@@ -9,7 +9,7 @@ import { Icons } from "@/components/ui/icons";
 export default function DashboardPage() {
 
   return (
-    <main className="bg-background flex-1 flex justify-between overflow-x-hidden">
+    <main className="bg-background flex-1 flex justify-between overflow-x-hidden relative">
       <section className=" flex space-x-5 p-5">
         <Card>
           <ItemsByCatTable className=" min-w-[40%]"/>
@@ -28,9 +28,7 @@ export default function DashboardPage() {
           <PackImage height={400} catWeights={[1,3,2,1,1]}/>
         </Card>
       </section>
-      <div className="relative">
-        <GearStore className="pt-5 [filter:drop-shadow(3px_3px_black)] mr-5" />
-      </div>
+      <GearStore className=" h-fit absolute [filter:drop-shadow(3px_3px_black)]" />
     </main>
   )
 }
