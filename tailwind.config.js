@@ -34,7 +34,7 @@ module.exports = {
     },
     extend: {
       colors: {
-        custBlue: 'hsl(var(--custBlue))',
+        custBlue: 'hsl(171, 34%, 74%)',
         custBlue2: 'hsl(221, 34%, 74%)',
         custGreen: 'hsl(119, 34%, 74%)',
         custPink: 'hsl(333, 47%, 84%)',
@@ -46,6 +46,10 @@ module.exports = {
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+        text: {
+          DEFAULT: "hsl(var(--text))",
+          muted: "hsl(var(--text-muted))",
+        },
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
@@ -98,7 +102,7 @@ module.exports = {
         sans: ['var(--font-lora)'],
       },
       boxShadow: {
-        DEFAULT: "3px 3px black",
+        DEFAULT: "var(--shadow)",
       }
     },
   },

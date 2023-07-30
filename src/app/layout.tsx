@@ -16,7 +16,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className='h-full'>
-      <body className={`${lora.variable} font-sans relative flex h-full flex-col`}>
+      <body className={`${lora.variable} bg-foreground text-black font-sans relative flex h-full flex-col`}>
         <SiteHeader />      
         {children}
         <TailwindIndicator />
