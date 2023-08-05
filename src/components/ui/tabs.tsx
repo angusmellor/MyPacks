@@ -42,7 +42,7 @@ const TabsContent = React.forwardRef<
   <TabsPrimitive.Content
     ref={ref}
     className={cn(
-      " w-full bg-foreground border border-border p-2",
+      " w-full bg-foreground border border-border p-2 h-max data-[state=inactive]:invisible",
       className
     )}
     {...props}

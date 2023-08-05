@@ -1,5 +1,5 @@
-import { PrismaAdapter } from "@next-auth/prisma-adapter";
-import { db } from "@/lib/db";
+import { MongoDBAdapter } from "@next-auth/mongodb-adapter";
+import clientPromise from "@/lib/db";
 import EmailProvider from "next-auth/providers/email";
 import  GoogleProvider from "next-auth/providers/google"
 
@@ -21,5 +21,5 @@ export const authOptions = {
       from: process.env.EMAIL_FROM,
     }),
   ],
-  adapter: PrismaAdapter(db),  
+  adapter: MongoDBAdapter(clientPromise),  
 }

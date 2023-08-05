@@ -3,20 +3,34 @@ import {
   Compass,
   Backpack,
   X,
+  Plus,
   Warehouse,
+  Tent,
+  Utensils,
   ChevronLeft,
   ChevronRight,
-  Shirt
+  LayoutList,
+  Shirt,
+  Pencil,
+  Share2,
+  Scale
 } from "lucide-react"
 
 export const Icons = {
   compass: Compass,
   backpack: Backpack,
   X: X,
+  plus: Plus,
   store: Warehouse,
+  tent: Tent,
+  list: LayoutList,
   chevronLeft: ChevronLeft,
   chevronRight: ChevronRight,
   shirt: Shirt,
+  share: Share2,
+  scale: Scale,
+  utensils: Utensils,
+  edit: Pencil,
   google: (props: LucideProps) => (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 186.69 190.5" {...props}>
       <g transform="translate(1184.583 765.171)">

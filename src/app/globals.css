@@ -15,8 +15,6 @@
 
     --shadow: 3px 3px black;
 
-
-
     /* --popover: 0 0% 100%;
     --popover-foreground: 222.2 47.4% 11.2%; */
 
@@ -75,6 +73,17 @@
     --ring: 216 34% 17%;
 
     --radius: 0.5rem;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 8px;
+    background-color: hsl(var(--foreground));
+  }
+  
+  /* Add a thumb */
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--text-muted));
   }
 }
 
