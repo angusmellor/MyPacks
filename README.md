@@ -1,4 +1,4 @@
-# MyPack
+# MyPacks
 
 Backpack building and gear inventory tool.
 
