@@ -11,11 +11,11 @@ export default function SiteHeader() {
         >
           <h1 className="font-bold font-sans text-5xl">MyPacks.io</h1>
         </Link>
-        <Link
+        {/* <Link
           href="/dashboard"
         >
           <h1>Dashboard</h1>
-        </Link>
+        </Link> */}
       </nav>
     </header>
   )
