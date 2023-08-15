@@ -29,7 +29,7 @@ export function EditItem() {
   )
 }
 
-export function DeletItem() {
+export function DeleteItem() {
 
   return (
     <Icons.X className=" h-6 w-6 hover:bg-red-400" />

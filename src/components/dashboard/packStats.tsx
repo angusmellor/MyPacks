@@ -9,8 +9,6 @@ export default function PackStats({className, categories}: {className?: string, 
   const wornWeight =  categories.reduce((p, a) =>(a.items.reduce((p, a) => a.worn ? a.weight * a.quantity + p : p, 0) + p), 0)
   const consumableWeight =  categories.reduce((p, a) =>(a.items.reduce((p, a) => a.consumable ? a.weight * a.quantity + p : p, 0) + p), 0)
   const baseWeight = totalWeight - wornWeight - consumableWeight
-
-  console.log(totalWeight, wornWeight, consumableWeight, baseWeight)
   
   return (
     <div className={className}>
