@@ -5,13 +5,9 @@ import { Category } from "@/types/types";
 
 export default function PackStats({className, categories}: {className?: string, categories: Category[]}) {
 
-  const totalWeight = categories.reduce((p, a) => ( a.items.reduce((p, a) => {
-    console.log(a)
-    const weight = Number(a.weight) * Number(a.quantity)
-    console.log(weight)
-    return weight + p}, 0) + p ), 0)
-  const wornWeight =  categories.reduce((p, a) =>(a.items.reduce((p, a) => a.worn ? a.weight + p : p, 0) + p), 0)
-  const consumableWeight =  categories.reduce((p, a) =>(a.items.reduce((p, a) => a.consumable ? a.weight + p : p, 0) + p), 0)
+  const totalWeight = categories.reduce((p, a) => ( a.items.reduce((p, a) => ( a.weight * a.quantity + p), 0) + p ), 0)
+  const wornWeight =  categories.reduce((p, a) =>(a.items.reduce((p, a) => a.worn ? a.weight * a.quantity + p : p, 0) + p), 0)
+  const consumableWeight =  categories.reduce((p, a) =>(a.items.reduce((p, a) => a.consumable ? a.weight * a.quantity + p : p, 0) + p), 0)
   const baseWeight = totalWeight - wornWeight - consumableWeight
 
   console.log(totalWeight, wornWeight, consumableWeight, baseWeight)
