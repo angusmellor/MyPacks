@@ -4,6 +4,7 @@ import PackImage from "@/components/packImage";
 import { Card } from "@/components/ui/card";
 import { Icons } from "@/components/ui/icons";
 import { Pack } from "@/types/types";
+import AddItemForm from "./addItemForm";
 
 
 async function getDashboardData() {
@@ -47,6 +48,7 @@ export default async function Dashboard() {
         <Card className="flex-1 h-fit flex flex-col space-y-2">
           <PackImage height={400} catWeights={[1,5,2,1,1]}/>
         </Card>
+        <AddItemForm/>
       </section>
   )
 
