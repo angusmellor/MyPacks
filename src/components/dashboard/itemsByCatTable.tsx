@@ -2,10 +2,7 @@ import { cn } from "@/lib/utils"
 import { 
   Table, 
   TableBody,
-  TableCaption,
   TableCell,
-  TableHead,
-  TableHeader,
   TableRow 
 } from "@/components/ui/table"
 import {WearableTag, ConsumableTag, DeleteItem} from "@/components/dashboard/itemOptions"
