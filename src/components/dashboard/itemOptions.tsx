@@ -2,6 +2,7 @@
 
 import { Icons } from "@/components/ui/icons";
 import { useState } from "react";
+import { Button } from "../ui/button";
 
 export function WearableTag() {
 
@@ -32,7 +33,9 @@ export function EditItem() {
 export function DeleteItem() {
 
   return (
-    <Icons.X className=" h-6 w-6 hover:bg-red-400" />
+    <Button variant={"ghost"} className="h-fit w-fit p-0">
+      <Icons.X className=" h-6 w-6 hover:bg-red-400" />
+    </Button>
   )
 
 }

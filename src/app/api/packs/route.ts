@@ -2,7 +2,7 @@ import clientPromise from "@/lib/db";
 import { dbName } from "@/config/site";
 import { NextResponse } from "next/server";
 
-export async function GET() { 
+export async function GET() {
 
   const client = await clientPromise
 

@@ -5,11 +5,12 @@ import { Card } from "@/components/ui/card";
 import { Icons } from "@/components/ui/icons";
 import { Pack } from "@/types/types";
 import AddItemForm from "./addItemForm";
+import { baseUrl } from "@/config/site";
 
 
 async function getDashboardData() {
 
-  const res = await fetch('http://localhost:3000/api/packs', { cache: 'no-store' })
+  const res = await fetch(baseUrl + '/api/packs', { cache: 'no-store' })
   
   if (!res.ok) {
     throw new Error('Failed to fetch data')
@@ -27,7 +28,7 @@ export default async function Dashboard() {
 
 
   return (
-    <section className=" flex space-x-5 p-5 bg-inherit">
+    <section className=" flex space-x-5 p-5 bg-inherit relative">
         <Card>
           <ItemsByCatTable className=" min-w-[40%]" categories={pack.categories}/>
         </Card>

@@ -7,6 +7,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { Form, FormField, FormItem, FormLabel, FormControl, FormMessage } from '@/components/ui/form';
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import { DeleteItem } from "./itemOptions";
 
 const itemFormSchema = z.object({
   name: z.string({required_error: "Name is required",
@@ -36,27 +37,30 @@ export default function AddItemForm() {
       cost: 0
     }
   })
-
+  
+  const addItem = async (item: z.infer<typeof itemFormSchema>) => {
+    // const newItem = {...item, categoryId: categoryId }
+    // const addedItem = await apiService.addItem(newItem, userId);
+    // if (packId) {
+    //   const connection = await apiService.connectItemToPack(addedItem.id, packId)
+    //   console.log(connection)
+    // }
+    // if (setPackItems && packId) {
+    //   const items = await apiService.getPackItems(packId);
+    //   setPackItems(items[0].packItems)
+    // }
+  }
   function onSubmit(item: z.infer<typeof itemFormSchema>) {
-    const addItem = async (item: z.infer<typeof itemFormSchema>) => {
-      // const newItem = {...item, categoryId: categoryId }
-      // const addedItem = await apiService.addItem(newItem, userId);
-      // if (packId) {
-      //   const connection = await apiService.connectItemToPack(addedItem.id, packId)
-      //   console.log(connection)
-      // }
-      // if (setPackItems && packId) {
-      //   const items = await apiService.getPackItems(packId);
-      //   setPackItems(items[0].packItems)
-      // }
-    }
     addItem(item);    
     form.reset();
   }
 
   return (
-    <Card className='flex flex-col items-center h-fit'>
-      <Form {...form}>
+    <Card className='flex flex-col h-fit absolute space-y-2 items-end '>
+    <Button variant={"ghost"} className="h-fit w-fit p-0" onClick={closeFormjl}>
+      <Icons.X className=" h-6 w-6 hover:bg-red-400" />
+    </Button>
+    <Form {...form}>
           <form className='flex flex-col items-center space-y-2' onSubmit={form.handleSubmit(onSubmit)}>
             <FormField
               control={form.control}
