@@ -1,23 +1,41 @@
-import { cn } from "@/lib/utils"
-import { 
-  Table, 
-  TableBody,
-  TableCell,
-  TableRow 
-} from "@/components/ui/table"
-import {WearableTag, ConsumableTag, DeleteItem} from "@/components/dashboard/itemOptions"
-import AddItem from "./addItem"
-import { colourPalette } from "@/config/site"
-import { Category } from "@/types/types"
+"use client";
 
-export default function ItemsByCatTable({className, categories}: {className?: string, categories: Category[]}) {
+import AddItemForm from "@/components/dashboard/addItemForm";
+import {
+  ConsumableTag,
+  DeleteItem,
+  WearableTag,
+} from "@/components/dashboard/itemOptions";
+import { Table, TableBody, TableCell, TableRow } from "@/components/ui/table";
+import { colourPalette } from "@/config/site";
+import { cn } from "@/lib/utils";
+import { Category } from "@/types/types";
+import { useState } from "react";
+import AddItem from "./addItem";
+
+export default function ItemsByCatTable({
+  className,
+  categories,
+}: {
+  className?: string;
+  categories: Category[];
+}) {
+  const [isFormOpen, setIsFormOpen] = useState(false);
+  const closeForm = () => setIsFormOpen(false);
 
   return (
-    <div className={cn(className, "flex flex-col space-y-2 min-w-fit h-full font-bold overflow-y-scroll")}>
+    <div
+      className={cn(
+        className,
+        "flex flex-col space-y-2 min-w-fit h-full font-bold overflow-y-scroll"
+      )}
+    >
       {categories.map((category, i) => (
         <>
           <div key={`${category.name}`} className="flex flex-row space-x-2">
-            <div className={`bg-${colourPalette[i]} w-6 h-6 bg-[] border-black border`}></div>
+            <div
+              className={`bg-${colourPalette[i]} w-6 h-6 bg-[] border-black border`}
+            ></div>
             <h2>{category.name}</h2>
           </div>
           <Table key={`${category.name}table`}>
@@ -28,19 +46,23 @@ export default function ItemsByCatTable({className, categories}: {className?: st
                   <TableCell>{item.description}</TableCell>
                   <TableCell>{item.weight} kg</TableCell>
                   <TableCell className="text-right">${item.cost}</TableCell>
-                  <TableCell><WearableTag/></TableCell>
-                  <TableCell><ConsumableTag/></TableCell>
-                  <TableCell><DeleteItem/></TableCell>
+                  <TableCell>
+                    <WearableTag />
+                  </TableCell>
+                  <TableCell>
+                    <ConsumableTag />
+                  </TableCell>
+                  <TableCell>
+                    <DeleteItem />
+                  </TableCell>
                 </TableRow>
               ))}
             </TableBody>
           </Table>
-          <div className="flex justify-center w-full">
-            <AddItem/>
-          </div>
+          <AddItem onClick={() => setIsFormOpen(true)} />
+          {isFormOpen && <AddItemForm closeForm={closeForm} />}
         </>
       ))}
     </div>
-  )
-
+  );
 }
