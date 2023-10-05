@@ -3,21 +3,10 @@ import PackStats from "@/components/dashboard/packStats";
 import PackImage from "@/components/packImage";
 import { Card } from "@/components/ui/card";
 import { Icons } from "@/components/ui/icons";
-import { baseUrl } from "@/config/site";
-import { Pack } from "@/types/types";
-
-async function getDashboardData() {
-  const res = await fetch(baseUrl + "/api/packs", { cache: "no-store" });
-
-  if (!res.ok) {
-    throw new Error("Failed to fetch data");
-  }
-
-  return res.json();
-}
+import { getAllPacks } from "@/lib/packs";
 
 export default async function Dashboard() {
-  const packs: Pack[] = await getDashboardData();
+  const packs = await getAllPacks();
   const pack = packs[0];
 
   console.log(pack);
