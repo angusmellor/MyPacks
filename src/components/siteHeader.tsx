@@ -1,14 +1,11 @@
+import SignIn from "@/components/SignIn";
 import Link from "next/link";
-import { Separator } from "@/components/ui/separator";
 
 export default function SiteHeader() {
-
   return (
     <header>
-      <nav className="flex p-5">
-        <Link
-          href="/"
-        >
+      <nav className="flex p-5 justify-between">
+        <Link href="/">
           <h1 className="font-bold font-sans text-5xl">MyPacks.io</h1>
         </Link>
         {/* <Link
@@ -16,7 +13,8 @@ export default function SiteHeader() {
         >
           <h1>Dashboard</h1>
         </Link> */}
+        <SignIn></SignIn>
       </nav>
     </header>
-  )
+  );
 }

@@ -1,23 +1,23 @@
-import { Metadata } from "next"
-import Link from "next/link"
+import { Metadata } from "next";
+import Link from "next/link";
 
-import AuthForm from "@/components/authForm"
-import { Icons } from "@/components/ui/icons"
+import AuthForm from "@/components/authForm";
+import { Icons } from "@/components/ui/icons";
 
 export const metadata: Metadata = {
   title: "Login",
   description: "Login to your account",
-}
+};
 
 export default function LoginPage() {
   return (
     <div className="container flex h-screen w-screen items-center justify-center">
       <Link
         href="/"
-        className="absolute left-4 top-4 flex items-center md:left-8 md:top-8"
+        className="absolute right-4 top-4 flex items-center md:left-8 md:top-8"
       >
         <>
-        <Icons.chevronLeft className="mr-2 mt-1 h-4 w-4" />
+          <Icons.chevronLeft className="mr-2 mt-1 h-4 w-4" />
           Back
         </>
       </Link>
@@ -33,5 +33,5 @@ export default function LoginPage() {
         <AuthForm />
       </div>
     </div>
-  )
+  );
 }

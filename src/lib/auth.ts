@@ -1,13 +1,13 @@
+import clientPromise from "@/lib/mongodb";
 import { MongoDBAdapter } from "@next-auth/mongodb-adapter";
-import clientPromise from "@/lib/db";
 import EmailProvider from "next-auth/providers/email";
-import  GoogleProvider from "next-auth/providers/google"
+import GoogleProvider from "next-auth/providers/google";
 
 export const authOptions = {
   providers: [
     GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID as string,
-      clientSecret: process.env.GOOGLE_CLIENT_SECRET as string 
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET as string,
     }),
     EmailProvider({
       server: {
@@ -21,5 +21,5 @@ export const authOptions = {
       from: process.env.EMAIL_FROM,
     }),
   ],
-  adapter: MongoDBAdapter(clientPromise),  
-}
+  adapter: MongoDBAdapter(clientPromise),
+};

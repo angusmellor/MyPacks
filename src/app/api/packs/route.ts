@@ -1,5 +1,5 @@
 import { dbName } from "@/config/site";
-import clientPromise from "@/lib/db";
+import clientPromise from "@/lib/mongodb";
 import { NextResponse } from "next/server";
 
 export async function GET() {
